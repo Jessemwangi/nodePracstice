@@ -1,0 +1,6 @@
+ {
+    //commets arent allowed in json file
+    firstName:"Vera",
+    "lastName":"River",
+    'note':`vera is ${person.age}` //this take the age of matt
+}
