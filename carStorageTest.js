@@ -1,5 +1,7 @@
 'use strict';
-const {getAllCars,GetAllModel,getCar} = require('./carStorage');
+const {getAllCars,
+    GetAllModel,
+    getCar} = require('./carStorage');//best practice if the file carstorage has many function and you only require 3
 console.log('start here');
 console.log(getAllCars());
 // console.log(GetAllModel());
