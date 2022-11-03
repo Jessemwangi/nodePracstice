@@ -12,8 +12,7 @@ const server = http.createServer((req,res) =>{
     {
         message =`HI ${name}!`;
     }
-
-
+  
     res.writeHead(200,{'content-type':'text/html; charset=utf-8'});
     res.end(`<h1>${message}</h1>`);
 })

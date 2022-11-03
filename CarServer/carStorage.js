@@ -4,6 +4,10 @@ const cars = require('./cars.json');
 const getAllCars = () =>{
     return cars;
 }
+const getAllCarsJson = () =>{
+    return JSON.parse(cars);
+   
+}
 const GetAllModel = () =>{
 const models=[];
 for(const car of cars){
@@ -28,4 +32,4 @@ function getCar(key,value){
     return found;
 }
 
-module.exports={getAllCars,GetAllModel,getCar};
+module.exports={getAllCars,GetAllModel,getCar,getAllCarsJson};

@@ -1,4 +1,7 @@
 'use strict';
+
+// understand request path and search parameter, in the browser, if request is send we can capture path and search value
+
 const http = require('http');
 const { createServer } = require('http2');
 const {port,host} = require('./config.json');

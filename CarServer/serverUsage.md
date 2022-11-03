@@ -8,12 +8,12 @@ localhost:3000/cars
 
 ## get all types
 ```
-localhost:3000/cars
+localhost:3000/carstypes
 ```
 
 ## serch by licence
 ```
-localhost:3000/search/bylicence?value=abc-1
+localhost:3000/search/bylicense?value=abc-1
 ```
 ## serch by model
 ```
