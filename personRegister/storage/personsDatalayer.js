@@ -14,7 +14,8 @@ const search = (key,value) =>{
         return found;
     }
     else{
-        return persons;
+        found = [];
+        return {"message": "Not found Please Retry"};
     }
 }
 

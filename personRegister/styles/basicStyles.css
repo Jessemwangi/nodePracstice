@@ -4,6 +4,9 @@
 
 label{
     font-weight: 900;
+    width: 150px;
+    margin-left: 1rem;
+    display: inline-block;
 }
 
 main{
@@ -18,4 +21,11 @@ section{
 
 table{
     border-collapse: collapse;
+}
+h1{
+    color: green;
+}
+
+p{
+    display: inline-block;
 }

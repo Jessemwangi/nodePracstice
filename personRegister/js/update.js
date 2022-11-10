@@ -39,7 +39,9 @@
 
         function showError(message) {
             messagearea.innerHTML = `<p>${message}</p>`
-        }
+            resultset.classList.add("hidden");
+            messagearea.classList.remove("hidden");
+                }
 
         function updataPage(searchresult){
             if(searchresult.message){
@@ -48,6 +50,7 @@
             }
             else if (searchresult.length ===0){
                 showError('No Person Found');
+                
 
             }
             else{
@@ -58,9 +61,12 @@
                     <td>${person.lastname}</td>
                     <td>${person.age}</td>
                     </tr>\n`;
+                    resultset.classList.remove("hidden");
+                    messagearea.classList.add("hidden");
 
                 }
                 resultset.innerHTML=htmlString;
+
             }
         }
     }
