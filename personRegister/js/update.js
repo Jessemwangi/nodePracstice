@@ -8,7 +8,24 @@
         let keyInput;
         let searchValueInput;
 
+        const hideresultsetsection = () => {
+            resultsetsection.setAttribute('class','hidden');
+
+        }
+        const showresultsetsection = () =>{
+            resultsetsection.removeAttribute('class','hidden');
+        }
+        const showmessagearea = () =>{
+            messagearea.removeAttribute('class','hidden');
+        }
+
+        const hidemessagearea = () => {
+
+            messagearea.setAttribute('class','hidden');
+        } 
+
         document.addEventListener('DOMContentLoaded', init);
+
         function init() {
             resultset = document.getElementById('resultset');
             resultsetsection = document.getElementById('resultsetsection');
@@ -18,7 +35,19 @@
 
 
             document.getElementById('submit').addEventListener('click', submit);
+            keyInput.addEventListener('focus',clear);
+            keyInput.addEventListener('change',() =>searchValueInput.focus());
+            searchValueInput.addEventListener('change',submit);
 
+            clear();
+            keyInput.focus();
+        }
+
+        function clear (){
+            keyInput.value='';
+            searchValueInput.value='';
+            hidemessagearea();
+            hideresultsetsection();
         }
 
         async function submit() {
@@ -39,8 +68,10 @@
 
         function showError(message) {
             messagearea.innerHTML = `<p>${message}</p>`
-            resultset.classList.add("hidden");
-            messagearea.classList.remove("hidden");
+            hideresultsetsection();
+            showmessagearea();
+            // resultset.classList.add("hidden");
+            // messagearea.classList.remove("hidden");
                 }
 
         function updataPage(searchresult){
@@ -61,13 +92,15 @@
                     <td>${person.lastname}</td>
                     <td>${person.age}</td>
                     </tr>\n`;
-                    resultset.classList.remove("hidden");
-                    messagearea.classList.add("hidden");
+                    // resultset.classList.remove("hidden");
+                    // messagearea.classList.add("hidden");
 
                 }
                 resultset.innerHTML=htmlString;
+                showresultsetsection();
+                hidemessagearea();
 
             }
         }
     }
-)()
+)();
