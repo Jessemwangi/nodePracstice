@@ -35,3 +35,8 @@
 </main>
 </body>
 </html>
+
+
+select InvoiceHeader.InvoiceHeaderID,InvoiceHeader.InvoiceDate,InvoiceHeader.Amount,c.CustomerName,c.ContactPerson from InvoiceHeader
+join Customer c on c.CustomerID= InvoiceHeader.CustomerID
+where InvoiceHeaderID in (select InvoiceHeaderID from InvoiceLines where ServiceHeaderID in (select ServiceHeaderID from ServiceHeader where ServiceID in ('2838','2839')))
