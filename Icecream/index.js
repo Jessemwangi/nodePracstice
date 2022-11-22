@@ -26,7 +26,6 @@ const server = http.createServer(async (req, res) => {
 
         else if (isIn(route, ...resource)) {
             const result = await read(path.join(__dirname, route));
-            console.log(route, result);
             send(res, result);
            
         }
