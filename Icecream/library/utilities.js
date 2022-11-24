@@ -18,7 +18,7 @@ const read = async filePath => {
 }
 
 
-const send = (res,resource) => { // resource parsed from prev function as an objet (fileData,mime)
+const send = (res,resource) => { 
     res.writeHead(200,{
         'content-type':resource.mime.type,
         'content-length': Buffer.byteLength.apply(resource.fileData,res.mime.encoding)
